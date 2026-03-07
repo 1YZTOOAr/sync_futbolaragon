@@ -52,13 +52,24 @@ const CALENDAR_BENJAMIN = "35044d9d03492560e651cc5646d4929583fb9678dabb280b016c9
  * Rellena las URL y competitionKey para cada categoría. Mantén las constantes en mayúsculas.
  */
 // URLs (pon la export excel/html de FutbolAragon para cada categoría)
-const SOURCE_TERCERA_FEDERACION_URL = "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22379581&codcompeticion=22320180&codtemporada=21&CDetalle=1&excel=1&NPcd_File=1";
-const SOURCE_REGIONAL_PREFERENTE_URL = "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22320197&codcompeticion=22320195&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1";
-const SOURCE_JUVENIL_PREFERENTE_URL = "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22395204&codcompeticion=22320181&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1";
-const SOURCE_CADETE_URL = "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codtemporada=21&codcompeticion=22320183&codgrupo=22448755&CDetalle=1&excel=1&NPcd_File=1";
-const SOURCE_INFANTIL_URL = "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22448759&codcompeticion=22320184&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1";
-const SOURCE_ALEVIN_URL = "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=23074348&codcompeticion=23074335&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1";
-const SOURCE_BENJAMIN_URL = "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=23074332&codcompeticion=23074329&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1";
+
+const VERCEL_SOURCE_URL = "https://sync-futbolaragon.vercel.app/downloads/"; // <-- ejemplo de URL de un endpoint personalizado (puede ser tu propio servidor o función serverless que haga de proxy y parseo, para evitar problemas de CORS o cambios en la estructura HTML de FutbolAragon)
+
+const NAME_TERCERA_FEDERACION = "Tercera_Federación";
+const NAME_REGIONAL_PREFERENTE = "Regional_Preferente";
+const NAME_JUVENIL_PREFERENTE = "Juvenil_Preferente";
+const NAME_CADETE = "Cadete";
+const NAME_INFANTIL = "Infantil";
+const NAME_ALEVIN = "Alevin";
+const NAME_BENJAMIN = "Benjamin";
+
+const SOURCE_TERCERA_FEDERACION_URL = VERCEL_SOURCE_URL + NAME_TERCERA_FEDERACION + ".xls"; // construida desde VERCEL_SOURCE_URL + NAME + .xls
+const SOURCE_REGIONAL_PREFERENTE_URL = VERCEL_SOURCE_URL + NAME_REGIONAL_PREFERENTE + ".xls";
+const SOURCE_JUVENIL_PREFERENTE_URL = VERCEL_SOURCE_URL + NAME_JUVENIL_PREFERENTE + ".xls";
+const SOURCE_CADETE_URL = VERCEL_SOURCE_URL + NAME_CADETE + ".xls";
+const SOURCE_INFANTIL_URL = VERCEL_SOURCE_URL + NAME_INFANTIL + ".xls";
+const SOURCE_ALEVIN_URL = VERCEL_SOURCE_URL + NAME_ALEVIN + ".xls";
+const SOURCE_BENJAMIN_URL = VERCEL_SOURCE_URL + NAME_BENJAMIN + ".xls";
 
 // Competition keys (cadenas que identifiquen competencia/temporada/grupo en FutbolAragon)
 const COMP_TERCERA_FEDERACION_KEY = "codcompeticion=22320180|codtemporada=21|codgrupo=22379581";
