@@ -1,0 +1,58 @@
+name: Parse FutbolAragon XLS
+
+on:
+  workflow_run:
+    workflows: ["Download FutbolAragon XLS"]
+    types: [completed]
+
+permissions:
+  contents: write
+
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install runtime dependencies for artifact downloader
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Download artifacts from triggering workflow run
+        run: |
+          python tools/download_artifacts.py --event-path "${{ github.event_path }}" --repo "${{ github.repository }}" --token "${{ secrets.GITHUB_TOKEN }}" --out downloads
+
+      - name: Install parser dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests curl_cffi beautifulsoup4; fi
+
+      - name: Run parser on downloaded files
+        run: |
+          mkdir -p parsed
+          python tools/fetch_and_parse_futbolaragon.py --js-file tercera_federacion.js --local-dir downloads --output parsed/out.json --verbose
+
+      - name: Commit parsed JSON back to repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          git add parsed/out.json || true
+          git commit -m "update ${TS}" || echo "No changes to commit"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git push origin $BRANCH || echo "Push failed"
+
+      - name: Upload parsed JSON artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: futbolaragon-parsed-json
+          path: parsed/out.json
