@@ -23,8 +23,135 @@ const DEFAULT_TEAM_NAME = "CALAMOCHA C.F.";
 // IDs de calendarios
 // - GLOBAL: calendario con TODOS los partidos
 // - USER: calendario personal del usuario (solo su equipo)
-const CALENDAR_ID_GLOBAL = "primary"; // <-- cambia a tu ID real si usas uno dedicado
-const CALENDAR_ID_USER = "primary";   // <-- cambia a tu ID real del calendario personal (recomendado uno dedicado)
+const CALENDAR_ID_GLOBAL = "fce3eab17979b9db84d012d11e09635a494131d4100235e23f493cd76ab3c26e@group.calendar.google.com"; // <-- cambia a tu ID real si usas uno dedicado
+const CALENDAR_ID_USER = "baf0d32c488933e8418f5accae39a91272ebbf41444cd6155934d3457fa81b69@group.calendar.google.com";   // <-- cambia a tu ID real del calendario personal (recomendado uno dedicado)
+
+/**
+ * Soporte para múltiples categorías/competiciones.
+ * Rellena `sourceUrl` y `competitionKey` para cada categoría que quieras sincronizar.
+ * Si `sourceUrl` está vacío se omite esa categoría (útil para copiar/pegar y completar luego).
+ */
+const CATEGORIES = [
+  {
+    key: "TERCERA_FEDERACION",
+    displayName: "Primer Equipo - Tercera Federación",
+    sourceUrl: SOURCE_TERCERA_FEDERACION_URL,
+    competitionKey: COMP_TERCERA_FEDERACION_KEY,
+    // opcional: nombre del equipo en esa categoría (por si usas alias distinto)
+    teamName: DEFAULT_TEAM_NAME
+  },
+  {
+    key: "REGIONAL_PREFERENTE",
+    displayName: "Filial - Regional Preferente",
+    sourceUrl: SOURCE_REGIONAL_PREFERENTE_URL,
+    competitionKey: COMP_REGIONAL_PREFERENTE_KEY,
+    teamName: "CALAMOCHA C.F. B"
+  },
+  {
+    key: "JUVENIL_PREFERENTE",
+    displayName: "Juvenil - Juvenil Preferente",
+    sourceUrl: SOURCE_JUVENIL_PREFERENTE_URL,
+    competitionKey: COMP_JUVENIL_PREFERENTE_KEY,
+    teamName: "CALAMOCHA C.F."
+  },
+  {
+    key: "CADETE",
+    displayName: "Cadete - 1ª Cadete",
+    sourceUrl: SOURCE_CADETE_URL,
+    competitionKey: COMP_CADETE_KEY,
+    teamName: "CALAMOCHA C.F."
+  },
+  {
+    key: "INFANTIL",
+    displayName: "Infantil - 1ª Infantil",
+    sourceUrl: SOURCE_INFANTIL_URL,
+    competitionKey: COMP_INFANTIL_KEY,
+    teamName: "CALAMOCHA C.F."
+  },
+  {
+    key: "ALEVIN",
+    displayName: "Alevín - Alevín Fútbol 8",
+    sourceUrl: SOURCE_ALEVIN_URL,
+    competitionKey: COMP_ALEVIN_KEY,
+    teamName: "CALAMOCHA C.F."
+  },
+  {
+    key: "BENJAMIN",
+    displayName: "Benjamín - 2ª Benjamín",
+    sourceUrl: SOURCE_BENJAMIN_URL,
+    competitionKey: COMP_BENJAMIN_KEY,
+    teamName: "CALAMOCHA C.F."
+  }
+];
+
+/* ===== Constantes para rellenar manualmente =====
+ * Rellena las URL y competitionKey para cada categoría. Mantén las constantes en mayúsculas.
+ */
+// URLs (pon la export excel/html de FutbolAragon para cada categoría)
+const SOURCE_TERCERA_FEDERACION_URL = SOURCE_XLS_URL;
+const SOURCE_REGIONAL_PREFERENTE_URL = "";
+const SOURCE_JUVENIL_PREFERENTE_URL = "";
+const SOURCE_CADETE_URL = "";
+const SOURCE_INFANTIL_URL = "";
+const SOURCE_ALEVIN_URL = "";
+const SOURCE_BENJAMIN_URL = "";
+
+// Competition keys (cadenas que identifiquen competencia/temporada/grupo en FutbolAragon)
+const COMP_TERCERA_FEDERACION_KEY = COMPETITION_KEY;
+const COMP_REGIONAL_PREFERENTE_KEY = "";
+const COMP_JUVENIL_PREFERENTE_KEY = "";
+const COMP_CADETE_KEY = "";
+const COMP_INFANTIL_KEY = "";
+const COMP_ALEVIN_KEY = "";
+const COMP_BENJAMIN_KEY = "";
+
+// Calendarios específicos por categoría (si quieres tener calendarios separados por club/categoría)
+const CALENDAR_TERCERA_GLOBAL = CALENDAR_ID_GLOBAL;
+const CALENDAR_TERCERA_USER = CALENDAR_ID_USER;
+const CALENDAR_REGIONAL_GLOBAL = "";
+const CALENDAR_REGIONAL_USER = "";
+const CALENDAR_JUVENIL_GLOBAL = "";
+const CALENDAR_JUVENIL_USER = "";
+const CALENDAR_CADETE_GLOBAL = "";
+const CALENDAR_CADETE_USER = "";
+const CALENDAR_INFANTIL_GLOBAL = "";
+const CALENDAR_INFANTIL_USER = "";
+const CALENDAR_ALEVIN_GLOBAL = "";
+const CALENDAR_ALEVIN_USER = "";
+const CALENDAR_BENJAMIN_GLOBAL = "";
+const CALENDAR_BENJAMIN_USER = "";
+
+// Ahora usamos las constantes anteriores en la configuración `CATEGORIES` y `CALENDARS_BY_CATEGORY`.
+
+// Constantes por categoría (útiles como referencias desde otros scripts)
+const CAT_TERCERA_FEDERACION = "TERCERA_FEDERACION";
+const CAT_REGIONAL_PREFERENTE = "REGIONAL_PREFERENTE";
+const CAT_JUVENIL_PREFERENTE = "JUVENIL_PREFERENTE";
+const CAT_CADETE = "CADETE";
+const CAT_INFANTIL = "INFANTIL";
+const CAT_ALEVIN = "ALEVIN";
+const CAT_BENJAMIN = "BENJAMIN";
+
+/*
+ * Calendarios por categoría.
+ * Rellena `calendarGlobalId` y `calendarUserId` por categoría si quieres calendarios separados.
+ * Si se deja vacío, se usará `CALENDAR_ID_GLOBAL`/`CALENDAR_ID_USER` por defecto.
+ */
+const CALENDARS_BY_CATEGORY = {
+  [CAT_TERCERA_FEDERACION]: {
+    calendarGlobalId: CALENDAR_TERCERA_GLOBAL || CALENDAR_ID_GLOBAL,
+    calendarUserId: CALENDAR_TERCERA_USER || CALENDAR_ID_USER
+  },
+  [CAT_REGIONAL_PREFERENTE]: {
+    calendarGlobalId: CALENDAR_REGIONAL_GLOBAL || "",
+    calendarUserId: CALENDAR_REGIONAL_USER || ""
+  },
+  [CAT_JUVENIL_PREFERENTE]: { calendarGlobalId: "", calendarUserId: "" },
+  [CAT_CADETE]: { calendarGlobalId: "", calendarUserId: "" },
+  [CAT_INFANTIL]: { calendarGlobalId: "", calendarUserId: "" },
+  [CAT_ALEVIN]: { calendarGlobalId: "", calendarUserId: "" },
+  [CAT_BENJAMIN]: { calendarGlobalId: "", calendarUserId: "" }
+};
 
 /**
  * Lista oficial (por si quieres usar índices 1..18).
@@ -117,15 +244,57 @@ function deleteAllSyncTriggers() {
 // Sincroniza calendario global (todos los partidos)
 function syncGlobalCalendar() {
   const cfg = loadConfig_();
-  const matches = fetchAndParseMatches_();
-  syncMatchesToCalendar_(cfg.calendarGlobalId, matches, "GLOBAL");
+  const allMatches = [];
+
+  for (const cat of CATEGORIES) {
+    if (!cat.sourceUrl) {
+      console.log(`Omitiendo categoría ${cat.key} sin sourceUrl configurada.`);
+      continue;
+    }
+    const matches = fetchAndParseMatches_(cat.sourceUrl, cat.competitionKey);
+    for (const m of matches) {
+      m.categoryKey = cat.key;
+      m.categoryDisplay = cat.displayName || cat.key;
+      m.categoryTeamName = cat.teamName || null;
+    }
+
+    // Determina el calendario global para esta categoría (si existe uno específico)
+    const calForCat = (CALENDARS_BY_CATEGORY[cat.key] && CALENDARS_BY_CATEGORY[cat.key].calendarGlobalId) || cfg.calendarGlobalId;
+    syncMatchesToCalendar_(calForCat, matches, `GLOBAL(${cat.key})`);
+  }
 }
 
 // Sincroniza calendario personal del usuario (solo su equipo)
 function syncUserCalendar() {
   const cfg = loadConfig_();
-  const matches = fetchAndParseMatches_().filter(m => m.home === cfg.teamName || m.away === cfg.teamName);
-  syncMatchesToCalendar_(cfg.calendarUserId, matches, `USER(${cfg.teamName})`);
+  const team = cfg.teamName;
+  const matchesAll = [];
+
+  for (const cat of CATEGORIES) {
+    if (!cat.sourceUrl) continue;
+    const matches = fetchAndParseMatches_(cat.sourceUrl, cat.competitionKey);
+    for (const m of matches) {
+      m.categoryKey = cat.key;
+      m.categoryDisplay = cat.displayName || cat.key;
+      m.categoryTeamName = cat.teamName || null;
+      matchesAll.push(m);
+    }
+  }
+
+  // Agrupa por categoría y sincroniza al calendario de usuario por categoría (si existe),
+  // o al `CALENDAR_ID_USER` por defecto.
+  const matchesByCategory = {};
+  for (const m of matchesAll) {
+    if (m.home === team || m.away === team || (m.categoryTeamName && (m.home === m.categoryTeamName || m.away === m.categoryTeamName))) {
+      matchesByCategory[m.categoryKey] = matchesByCategory[m.categoryKey] || [];
+      matchesByCategory[m.categoryKey].push(m);
+    }
+  }
+
+  for (const catKey of Object.keys(matchesByCategory)) {
+    const catCalUser = (CALENDARS_BY_CATEGORY[catKey] && CALENDARS_BY_CATEGORY[catKey].calendarUserId) || cfg.calendarUserId;
+    syncMatchesToCalendar_(catCalUser, matchesByCategory[catKey], `USER(${cfg.teamName}|${catKey})`);
+  }
 }
 
 /**
@@ -133,8 +302,11 @@ function syncUserCalendar() {
  * CORE: Fetch + Parse
  * =========================
  */
-function fetchAndParseMatches_() {
-  const resp = UrlFetchApp.fetch(SOURCE_XLS_URL, {
+function fetchAndParseMatches_(sourceUrl, competitionKey) {
+  sourceUrl = sourceUrl || SOURCE_XLS_URL;
+  competitionKey = competitionKey || COMPETITION_KEY;
+
+  const resp = UrlFetchApp.fetch(sourceUrl, {
     followRedirects: true,
     muteHttpExceptions: true,
     headers: {
@@ -180,7 +352,7 @@ function fetchAndParseMatches_() {
 
     const endDate = new Date(startDate.getTime() + DEFAULT_DURATION_MIN * 60000);
 
-    const stableKey = buildStableMatchKey_(currentJornada, home, away);
+    const stableKey = buildStableMatchKey_(competitionKey, currentJornada, home, away);
     const eventId = buildDeterministicEventId_(stableKey);
 
     matches.push({
@@ -192,6 +364,7 @@ function fetchAndParseMatches_() {
       endDate,
       sourceText: fh || null,
       stableKey,
+      competitionKey: competitionKey,
       eventId
     });
   }
@@ -245,7 +418,7 @@ function buildEventResource_(m) {
 
   return {
     id: m.eventId,
-    summary: `⚽ ${m.home} vs ${m.away}`,
+    summary: `⚽ ${m.home} vs ${m.away}${m.categoryDisplay ? ' — ' + m.categoryDisplay : ''}`,
     location: m.location || "",
     description: [
       "Fuente: futbolaragon.com (export excel)",
@@ -258,7 +431,9 @@ function buildEventResource_(m) {
     extendedProperties: {
       private: {
         stableKey: m.stableKey,
-        competitionKey: COMPETITION_KEY,
+        competitionKey: m.competitionKey || COMPETITION_KEY,
+        categoryKey: m.categoryKey || null,
+        categoryDisplay: m.categoryDisplay || null,
         jornada: String(m.jornada),
         home: m.home,
         away: m.away
@@ -272,9 +447,10 @@ function buildEventResource_(m) {
  * IDs estables
  * =========================
  */
-function buildStableMatchKey_(jornada, home, away) {
+function buildStableMatchKey_(competitionKey, jornada, home, away) {
   // NO incluye fecha/hora/campo, para que cambios no cambien el ID.
-  return `${COMPETITION_KEY}|J${jornada}|${home}|${away}`.toUpperCase();
+  const comp = competitionKey || COMPETITION_KEY;
+  return `${comp}|J${jornada}|${home}|${away}`.toUpperCase();
 }
 
 function buildDeterministicEventId_(stableKey) {
