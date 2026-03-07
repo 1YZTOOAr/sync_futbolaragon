@@ -1,0 +1,67 @@
+name: Download FutbolAragon XLS
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: 'Commit downloads back to the repo (true/false)'
+        required: false
+        default: 'false'
+  schedule:
+    - cron: '0 2 * * *' # daily at 02:00 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install curl-cffi requests; fi
+
+      - name: Run downloader
+        run: |
+          python tools/download_futbolaragon.py --fetch --backend curl --output downloads
+
+      - name: List downloaded files
+        run: |
+          ls -la downloads || true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: futbolaragon-xls
+          path: downloads
+
+      - name: Commit downloads back to repo
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.commit == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add downloads || true
+          git commit -m "chore: update downloaded XLS files" || echo "No changes to commit"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git push origin $BRANCH
