@@ -1,0 +1,51 @@
+{
+  "TERCERA_FEDERACION": {
+    "sourceUrl": "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22379581&codcompeticion=22320180&codtemporada=21&CDetalle=1&excel=1&NPcd_File=1",
+    "competitionKey": "codcompeticion=22320180|codtemporada=21|codgrupo=22379581",
+    "teamName": "CALAMOCHA C.F.",
+    "matches": [],
+    "rows_count": 0
+  },
+  "REGIONAL_PREFERENTE": {
+    "sourceUrl": "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22320197&codcompeticion=22320195&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1",
+    "competitionKey": "codcompeticion=22320195|codtemporada=21|codgrupo=22320197",
+    "teamName": "CALAMOCHA C.F. B",
+    "matches": [],
+    "rows_count": 0
+  },
+  "JUVENIL_PREFERENTE": {
+    "sourceUrl": "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22395204&codcompeticion=22320181&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1",
+    "competitionKey": "codcompeticion=22320181|codtemporada=21|codgrupo=22395204",
+    "teamName": "CALAMOCHA C.F.",
+    "matches": [],
+    "rows_count": 0
+  },
+  "CADETE": {
+    "sourceUrl": "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codtemporada=21&codcompeticion=22320183&codgrupo=22448755&CDetalle=1&excel=1&NPcd_File=1",
+    "competitionKey": "codcompeticion=22320183|codtemporada=21|codgrupo=22448755",
+    "teamName": "CALAMOCHA C.F.",
+    "matches": [],
+    "rows_count": 0
+  },
+  "INFANTIL": {
+    "sourceUrl": "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22448759&codcompeticion=22320184&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1",
+    "competitionKey": "codcompeticion=22320184|codtemporada=21|codgrupo=22448759",
+    "teamName": "CALAMOCHA C.F.",
+    "matches": [],
+    "rows_count": 0
+  },
+  "ALEVIN": {
+    "sourceUrl": "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=23074348&codcompeticion=23074335&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1",
+    "competitionKey": "codcompeticion=23074335|codtemporada=21|codgrupo=23074348",
+    "teamName": "CALAMOCHA C.F.",
+    "matches": [],
+    "rows_count": 0
+  },
+  "BENJAMIN": {
+    "sourceUrl": "https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=23074332&codcompeticion=23074329&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1",
+    "competitionKey": "codcompeticion=23074329|codtemporada=21|codgrupo=23074332",
+    "teamName": "CALAMOCHA C.F.",
+    "matches": [],
+    "rows_count": 0
+  }
+}

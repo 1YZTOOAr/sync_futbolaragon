@@ -1,0 +1,93 @@
+2026-03-07 20:43:10,963 INFO Inicio: js_file=tercera_federacion.js timeout=15 verbose=True
+2026-03-07 20:43:10,970 DEBUG GET https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22379581&codcompeticion=22320180&codtemporada=21&CDetalle=1&excel=1&NPcd_File=1 headers={'User-Agent': 'Mozilla/5.0 (compatible; fetch_and_parse_futbolaragon/1.0)', 'Accept-Language': 'es-ES,es;q=0.9'} timeout=15
+2026-03-07 20:43:10,973 DEBUG Starting new HTTPS connection (1): www.futbolaragon.com:443
+2026-03-07 20:43:11,137 DEBUG https://www.futbolaragon.com:443 "GET /pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22379581&codcompeticion=22320180&codtemporada=21&CDetalle=1&excel=1&NPcd_File=1 HTTP/11" 200 0
+2026-03-07 20:43:11,139 DEBUG Response status=200
+2026-03-07 20:43:11,139 DEBUG no data received!
+2026-03-07 20:43:11,139 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,140 DEBUG no data received!
+2026-03-07 20:43:11,140 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,141 DEBUG Response apparent_encoding=None final_encoding=iso-8859-1
+2026-03-07 20:43:11,142 DEBUG Headers recibidos: {'Set-Cookie': 'JSESSIONID=446D480B6FA360504A4D3753C83AA6B3; Path=/pnfg; Secure; HttpOnly', 'Content-Length': '0', 'Date': 'Sat, 07 Mar 2026 19:43:10 GMT', 'Connection': 'close'}
+2026-03-07 20:43:11,143 DEBUG extract_rows_from_html: filas extraidas=0
+2026-03-07 20:43:11,143 INFO categoria=TERCERA_FEDERACION rows_count=0
+2026-03-07 20:43:11,145 INFO parse_matches_from_rows: partidos detectados=0 (competitionKey=codcompeticion=22320180|codtemporada=21|codgrupo=22379581)
+2026-03-07 20:43:11,145 DEBUG GET https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22320197&codcompeticion=22320195&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 headers={'User-Agent': 'Mozilla/5.0 (compatible; fetch_and_parse_futbolaragon/1.0)', 'Accept-Language': 'es-ES,es;q=0.9'} timeout=15
+2026-03-07 20:43:11,148 DEBUG Starting new HTTPS connection (1): www.futbolaragon.com:443
+2026-03-07 20:43:11,295 DEBUG https://www.futbolaragon.com:443 "GET /pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22320197&codcompeticion=22320195&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 HTTP/11" 200 0
+2026-03-07 20:43:11,296 DEBUG Response status=200
+2026-03-07 20:43:11,297 DEBUG no data received!
+2026-03-07 20:43:11,297 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,297 DEBUG no data received!
+2026-03-07 20:43:11,297 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,298 DEBUG Response apparent_encoding=None final_encoding=iso-8859-1
+2026-03-07 20:43:11,298 DEBUG Headers recibidos: {'Set-Cookie': 'JSESSIONID=80764DBDC99B14E4EB35E27559944AD0; Path=/pnfg; Secure; HttpOnly', 'Content-Length': '0', 'Date': 'Sat, 07 Mar 2026 19:43:10 GMT', 'Connection': 'close'}
+2026-03-07 20:43:11,298 DEBUG extract_rows_from_html: filas extraidas=0
+2026-03-07 20:43:11,299 INFO categoria=REGIONAL_PREFERENTE rows_count=0
+2026-03-07 20:43:11,299 INFO parse_matches_from_rows: partidos detectados=0 (competitionKey=codcompeticion=22320195|codtemporada=21|codgrupo=22320197)
+2026-03-07 20:43:11,300 DEBUG GET https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22395204&codcompeticion=22320181&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 headers={'User-Agent': 'Mozilla/5.0 (compatible; fetch_and_parse_futbolaragon/1.0)', 'Accept-Language': 'es-ES,es;q=0.9'} timeout=15
+2026-03-07 20:43:11,301 DEBUG Starting new HTTPS connection (1): www.futbolaragon.com:443
+2026-03-07 20:43:11,488 DEBUG https://www.futbolaragon.com:443 "GET /pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22395204&codcompeticion=22320181&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 HTTP/11" 200 0
+2026-03-07 20:43:11,494 DEBUG Response status=200
+2026-03-07 20:43:11,528 DEBUG no data received!
+2026-03-07 20:43:11,576 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,600 DEBUG no data received!
+2026-03-07 20:43:11,600 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,602 DEBUG Response apparent_encoding=None final_encoding=iso-8859-1
+2026-03-07 20:43:11,603 DEBUG Headers recibidos: {'Set-Cookie': 'JSESSIONID=9E0FB7D2BFFCB99E3A6B002C329849BB; Path=/pnfg; Secure; HttpOnly', 'Content-Length': '0', 'Date': 'Sat, 07 Mar 2026 19:43:10 GMT', 'Connection': 'close'}
+2026-03-07 20:43:11,603 DEBUG extract_rows_from_html: filas extraidas=0
+2026-03-07 20:43:11,604 INFO categoria=JUVENIL_PREFERENTE rows_count=0
+2026-03-07 20:43:11,604 INFO parse_matches_from_rows: partidos detectados=0 (competitionKey=codcompeticion=22320181|codtemporada=21|codgrupo=22395204)
+2026-03-07 20:43:11,605 DEBUG GET https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codtemporada=21&codcompeticion=22320183&codgrupo=22448755&CDetalle=1&excel=1&NPcd_File=1 headers={'User-Agent': 'Mozilla/5.0 (compatible; fetch_and_parse_futbolaragon/1.0)', 'Accept-Language': 'es-ES,es;q=0.9'} timeout=15
+2026-03-07 20:43:11,610 DEBUG Starting new HTTPS connection (1): www.futbolaragon.com:443
+2026-03-07 20:43:11,770 DEBUG https://www.futbolaragon.com:443 "GET /pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codtemporada=21&codcompeticion=22320183&codgrupo=22448755&CDetalle=1&excel=1&NPcd_File=1 HTTP/11" 200 0
+2026-03-07 20:43:11,771 DEBUG Response status=200
+2026-03-07 20:43:11,771 DEBUG no data received!
+2026-03-07 20:43:11,771 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,772 DEBUG no data received!
+2026-03-07 20:43:11,772 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,773 DEBUG Response apparent_encoding=None final_encoding=iso-8859-1
+2026-03-07 20:43:11,773 DEBUG Headers recibidos: {'Set-Cookie': 'JSESSIONID=16BC601B17BF46DF8D7B3785A23810C6; Path=/pnfg; Secure; HttpOnly', 'Content-Length': '0', 'Date': 'Sat, 07 Mar 2026 19:43:11 GMT', 'Connection': 'close'}
+2026-03-07 20:43:11,773 DEBUG extract_rows_from_html: filas extraidas=0
+2026-03-07 20:43:11,774 INFO categoria=CADETE rows_count=0
+2026-03-07 20:43:11,774 INFO parse_matches_from_rows: partidos detectados=0 (competitionKey=codcompeticion=22320183|codtemporada=21|codgrupo=22448755)
+2026-03-07 20:43:11,774 DEBUG GET https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22448759&codcompeticion=22320184&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 headers={'User-Agent': 'Mozilla/5.0 (compatible; fetch_and_parse_futbolaragon/1.0)', 'Accept-Language': 'es-ES,es;q=0.9'} timeout=15
+2026-03-07 20:43:11,776 DEBUG Starting new HTTPS connection (1): www.futbolaragon.com:443
+2026-03-07 20:43:11,922 DEBUG https://www.futbolaragon.com:443 "GET /pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=22448759&codcompeticion=22320184&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 HTTP/11" 200 0
+2026-03-07 20:43:11,924 DEBUG Response status=200
+2026-03-07 20:43:11,924 DEBUG no data received!
+2026-03-07 20:43:11,925 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,928 DEBUG no data received!
+2026-03-07 20:43:11,929 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:11,929 DEBUG Response apparent_encoding=None final_encoding=iso-8859-1
+2026-03-07 20:43:11,930 DEBUG Headers recibidos: {'Set-Cookie': 'JSESSIONID=E09BD44324BD0178D658716670E62478; Path=/pnfg; Secure; HttpOnly', 'Content-Length': '0', 'Date': 'Sat, 07 Mar 2026 19:43:11 GMT', 'Connection': 'close'}
+2026-03-07 20:43:11,930 DEBUG extract_rows_from_html: filas extraidas=0
+2026-03-07 20:43:11,930 INFO categoria=INFANTIL rows_count=0
+2026-03-07 20:43:11,931 INFO parse_matches_from_rows: partidos detectados=0 (competitionKey=codcompeticion=22320184|codtemporada=21|codgrupo=22448759)
+2026-03-07 20:43:11,931 DEBUG GET https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=23074348&codcompeticion=23074335&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 headers={'User-Agent': 'Mozilla/5.0 (compatible; fetch_and_parse_futbolaragon/1.0)', 'Accept-Language': 'es-ES,es;q=0.9'} timeout=15
+2026-03-07 20:43:11,939 DEBUG Starting new HTTPS connection (1): www.futbolaragon.com:443
+2026-03-07 20:43:12,107 DEBUG https://www.futbolaragon.com:443 "GET /pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=23074348&codcompeticion=23074335&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 HTTP/11" 200 0
+2026-03-07 20:43:12,113 DEBUG Response status=200
+2026-03-07 20:43:12,118 DEBUG no data received!
+2026-03-07 20:43:12,120 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:12,120 DEBUG no data received!
+2026-03-07 20:43:12,126 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:12,128 DEBUG Response apparent_encoding=None final_encoding=iso-8859-1
+2026-03-07 20:43:12,129 DEBUG Headers recibidos: {'Set-Cookie': 'JSESSIONID=C6A67177185E3960A7B030DE8AC7D780; Path=/pnfg; Secure; HttpOnly', 'Content-Length': '0', 'Date': 'Sat, 07 Mar 2026 19:43:11 GMT', 'Connection': 'close'}
+2026-03-07 20:43:12,130 DEBUG extract_rows_from_html: filas extraidas=0
+2026-03-07 20:43:12,131 INFO categoria=ALEVIN rows_count=0
+2026-03-07 20:43:12,133 INFO parse_matches_from_rows: partidos detectados=0 (competitionKey=codcompeticion=23074335|codtemporada=21|codgrupo=23074348)
+2026-03-07 20:43:12,133 DEBUG GET https://www.futbolaragon.com/pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=23074332&codcompeticion=23074329&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 headers={'User-Agent': 'Mozilla/5.0 (compatible; fetch_and_parse_futbolaragon/1.0)', 'Accept-Language': 'es-ES,es;q=0.9'} timeout=15
+2026-03-07 20:43:12,136 DEBUG Starting new HTTPS connection (1): www.futbolaragon.com:443
+2026-03-07 20:43:12,319 DEBUG https://www.futbolaragon.com:443 "GET /pnfg/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000120&codgrupo=23074332&codcompeticion=23074329&codtemporada=21&CodJornada=&CDetalle=1&excel=1&NPcd_File=1 HTTP/11" 200 0
+2026-03-07 20:43:12,320 DEBUG Response status=200
+2026-03-07 20:43:12,320 DEBUG no data received!
+2026-03-07 20:43:12,321 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:12,321 DEBUG no data received!
+2026-03-07 20:43:12,321 DEBUG no probers hit minimum threshold
+2026-03-07 20:43:12,321 DEBUG Response apparent_encoding=None final_encoding=iso-8859-1
+2026-03-07 20:43:12,322 DEBUG Headers recibidos: {'Set-Cookie': 'JSESSIONID=54FB8F6291BC8325F9505B6B9B47DD0B; Path=/pnfg; Secure; HttpOnly', 'Content-Length': '0', 'Date': 'Sat, 07 Mar 2026 19:43:11 GMT', 'Connection': 'close'}
+2026-03-07 20:43:12,322 DEBUG extract_rows_from_html: filas extraidas=0
+2026-03-07 20:43:12,322 INFO categoria=BENJAMIN rows_count=0
+2026-03-07 20:43:12,323 INFO parse_matches_from_rows: partidos detectados=0 (competitionKey=codcompeticion=23074329|codtemporada=21|codgrupo=23074332)
+2026-03-07 20:43:12,323 INFO Wrote partidos.json
